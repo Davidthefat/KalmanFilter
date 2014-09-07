@@ -31,4 +31,5 @@ public:
 	float processCorrection(float in);
 	//returns the Estimate Error, used to determine the "exactness" of the estimate.
 	float error();
-}
+};
+#endif
