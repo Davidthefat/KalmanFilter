@@ -10,12 +10,13 @@
 **
 ** Author: David Yoon
 ** -------------------------------------------------------------------------*/
+#include "KalmanFilter.h"
 KalmanFilter::KalmanFilter(float iE, float eE, float pN, float mN)
 {
 	initEstimate = iE;
 	estimateErr = eE;
 	processNoise = pN;
-	mesurementNoise = mN;
+	measurementNoise = mN;
 }
 void KalmanFilter::processEstimate(float in)
 {

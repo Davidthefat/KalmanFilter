@@ -18,7 +18,7 @@ private:
 	float initEstimate;
 	float estimateErr;
 	float processNoise;
-	float mesurementNoise;
+	float measurementNoise;
 	float KalmanGain;
 	float state;
 public:
