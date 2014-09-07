@@ -20,8 +20,7 @@ private:
 	float processNoise;
 	float mesurementNoise;
 	float KalmanGain;
-	float preState;
-	float postState;
+	float state;
 public:
 	//iE: Initial Estimate, eE: Estimate Error, pN: Process Noise, mN: Measurement Noise
 	KalmanFilter(float iE, float eE, float pN, float mN);

@@ -12,7 +12,7 @@
 ** -------------------------------------------------------------------------*/
 KalmanFilter::KalmanFilter(float iE, float eE, float pN, float mN)
 {
-	preState = initEstimate = iE;
+	initEstimate = iE;
 	estimateErr = eE;
 	processNoise = pN;
 	mesurementNoise = mN;
@@ -25,10 +25,9 @@ void KalmanFilter::processEstimate(float in)
 float KalmanFilter::processCorrection(float in)
 {
 	KalmanGain = estimateErr/(estimateErr + measurementNoise);
-	postState = preState + KalmanGain*(in - initEstimate);
-	preState = postState;
+	state = initEstimate + KalmanGain*(in - initEstimate);
 	estimateErr *= (1 - KalmanGain);
-	return postState;
+	return state;
 }
 float KalmanFilter::error()
 {
